@@ -23,13 +23,11 @@ const Header = ({ userName }) => {
     <AntHeader className="header">
       <div className="username">{userName}</div>
       <Button
-        type="primary"
         icon={<LogoutOutlined />}
         className="logout-button"
         onClick={handleLogout}
-        danger
       >
-        Logout
+        <b>Logout</b>
       </Button>
     </AntHeader>
   );
