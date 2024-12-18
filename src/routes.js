@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import Login from "./components/login/Login";
-import Signup from "./components/signup/Signup";
-import Dashboard from "./components/dashboard/Dashboard";
+import Login from "./containers/login/Login";
+import Signup from "./containers/signup/Signup";
+import Dashboard from "./containers/dashboard/Dashboard";
 import { ROUTERS } from "./utils/Constants";
 
 const AppRoutes = () => {
