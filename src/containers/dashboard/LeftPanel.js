@@ -4,7 +4,6 @@ import { UserOutlined } from "@ant-design/icons";
 
 const LeftPanel = ({ userName, users, onMyPosts, onAccountSettings }) => {
   const user = users?.filter((user) => user.id === userName.id);
-  console.log("user: ", user);
   return (
     <div className="left-panel">
       <div className="card-container">

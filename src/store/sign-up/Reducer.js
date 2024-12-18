@@ -21,7 +21,7 @@ const reducer = (state = initialState, action) => {
       return { ...state, loading: true };
     case SUBMIT_SIGNUP_ACTION_DISPATCHER:
       const data = action.payload?.data;
-      console.log("data: ", data);
+      // console.log("data: ", data);
       if (data) {
         setUserAuthDetails(data);
         return {

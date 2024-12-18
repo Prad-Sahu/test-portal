@@ -233,7 +233,7 @@ const Dashboard = () => {
           </Form>
         </Modal>
 
-        <Sider width={"21vw"} className="left-panel">
+        <Sider width={"18vw"} className="left-panel">
           <LeftPanel
             userName={userName}
             users={users}

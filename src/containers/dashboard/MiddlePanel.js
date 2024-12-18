@@ -20,7 +20,6 @@ const MiddlePanel = () => {
   const handlePostSortChange = (e) => {
     const value = e.target.value;
     setSortBy(value);
-    console.log("value: ", value);
   };
 
   const handlePostSearch = (value) => {
@@ -54,14 +53,14 @@ const MiddlePanel = () => {
             placeholder="Search posts"
             allowClear
             onSearch={handlePostSearch}
-            style={{ width: "75%" }}
+            style={{ maxWidth: "80%" }}
           />
           <Radio.Group value={sortBy} onChange={handlePostSortChange}>
             <Radio.Button value="aToZ">
-              <SortAscendingOutlined /> A to Z
+              <SortAscendingOutlined />
             </Radio.Button>
             <Radio.Button value="zToA">
-              Z to A <SortDescendingOutlined />
+              <SortDescendingOutlined />
             </Radio.Button>
           </Radio.Group>
         </div>
@@ -80,7 +79,7 @@ const MiddlePanel = () => {
               //   </Button>,
               // ]}
               >
-                <span>
+                <span className="post-container">
                   <h2>{post?.title}</h2>
                   <p>{post?.body}</p>
                 </span>

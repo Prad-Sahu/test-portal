@@ -42,7 +42,7 @@ body {
 
 .form-toggle .active {
     background-color: #033452;
-    color:  #f3f3f3;
+    color: #f3f3f3;
 }
 
 .form {
@@ -64,7 +64,7 @@ body {
 .form button {
     padding: 10px;
     background-color: #033452;
-    color:  #f3f3f3;
+    color: #f3f3f3;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -142,17 +142,15 @@ body {
 
 .left-panel,
 .right-panel {
-    background-color: #fff;
-    padding: 24px;
+    background-color: #bdbdbd;
+    padding: 10px;
     margin: 10px;
-    border-right: 1px solid #f0f0f0;
     overflow-y: auto;
 }
 
 .left-panel .user-profile-image {
     display: block;
     margin: 0 auto 16px;
-    max-width: 25vw;
     border-radius: 50%;
 }
 
@@ -170,6 +168,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
 .button-container {
@@ -178,12 +177,9 @@ body {
     gap: 10px;
 }
 
-.left-panel-button {
-    width: 100%;
-}
 
 .left-panel-button {
-    width: 16vw;
+    width: 14vw;
 }
 
 .left-panel .my-posts {
@@ -195,11 +191,17 @@ body {
 }
 
 .middle-panel {
-    padding: 24px;
-    background-color: #fff;
+    padding: 10px;
+    background-color: #bdbdbd;
     margin: 10px;
     flex-grow: 1;
     overflow-y: auto;
+}
+
+.post-container {
+    background-color: #f3f3f3;
+    border-radius: 10px;
+    padding: 0px 10px 0px 10px;
 }
 
 .user-connection {

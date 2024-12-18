@@ -33,7 +33,6 @@ const reducer = (state = initialState, action) => {
         };
       } else {
         alert("Authentication failed!", data);
-        console.log("data: ", data);
         return {
           ...state,
           successData: {

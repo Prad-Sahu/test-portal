@@ -48,7 +48,7 @@ export const registerUser = (newUser) => {
 
 // Function to authenticate user
 export const authenticateUser = (email, password) => {
-    console.log('STATIC_USERS: ', STATIC_USERS);
+    // console.log('STATIC_USERS: ', STATIC_USERS);
     const user = STATIC_USERS.find(
         u => u.email === email && u.password === password
     );
