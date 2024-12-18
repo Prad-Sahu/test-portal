@@ -134,7 +134,9 @@ const Dashboard = () => {
           title="Edit Post"
           open={isEditModalOpen}
           onCancel={handleEditCancel}
+          width={"51vw"}
           footer={null}
+          centered
         >
           <Form initialValues={currentPost} onFinish={handleEditSubmit}>
             <Form.Item
@@ -163,7 +165,9 @@ const Dashboard = () => {
           title="Account Settings"
           open={isAccountSettingsOpen}
           onCancel={handleAccountSettingsCancel}
+          width={"51vw"}
           footer={null}
+          centered
         >
           <Form
             initialValues={currentUser}
