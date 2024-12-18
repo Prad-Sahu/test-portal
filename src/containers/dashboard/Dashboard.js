@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Button, Form, Input, Layout, List, Modal, Spin, Radio } from "antd";
 import { EditOutlined } from "@ant-design/icons";
-import Header from "./Header";
+import Header from "../../components/Header/Header";
 import LeftPanel from "./LeftPanel";
 import MiddlePanel from "./MiddlePanel";
 import RightPanel from "./RightPanel";
