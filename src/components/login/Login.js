@@ -1,10 +1,10 @@
 import { Spin } from "antd";
-import action from "../store/Actions";
+import action from "../../store/Actions";
 import { useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 // import { authenticateUser } from "./userManagement";
 import { useDispatch, useSelector } from "react-redux";
-import { getAuthUserDetails } from "../utils/Helpers";
+import { getAuthUserDetails } from "../../utils/Helpers";
 
 export default function Login() {
   const dispatch = useDispatch();
@@ -20,7 +20,12 @@ export default function Login() {
     (state) => state.rootReducer.login.successData.loginMessage
   );
   const loginLoading = useSelector((state) => state.rootReducer.login.loading);
-
+  useEffect(() => {
+    if (typeof getAuthUserDetails().id !== "undefined") {
+      navigate(`/${getAuthUserDetails().username}`);
+    }
+    // eslint-disable-next-line
+  }, []);
   useEffect(() => {
     // Handle navigation after successful login
     if (

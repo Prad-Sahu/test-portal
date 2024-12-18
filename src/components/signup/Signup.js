@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Spin } from "antd";
-import { registerUser } from "./userManagement";
+import { registerUser } from "../../hooks/userManagement";
+import { getAuthUserDetails } from "../../utils/Helpers";
 
 export default function Signup() {
   const navigate = useNavigate();
@@ -11,19 +12,24 @@ export default function Signup() {
   const [loading, setLoading] = useState(false);
   const [formErrors, setFormErrors] = useState({});
   const [registrationSuccess, setRegistrationSuccess] = useState(false);
-
+  useEffect(() => {
+    if (typeof getAuthUserDetails().id !== "undefined") {
+      navigate(`/${getAuthUserDetails().username}`);
+    }
+    // eslint-disable-next-line
+  }, []);
   useEffect(() => {
     // Check if user is already authenticated
-    const isAuthenticated = localStorage.getItem('isAuthenticated');
-    if (isAuthenticated === 'true') {
-      navigate('/dashboard');
+    const isAuthenticated = localStorage.getItem("isAuthenticated");
+    if (isAuthenticated === "true") {
+      navigate("/dashboard");
     }
   }, [navigate]);
 
   useEffect(() => {
     // Handle navigation after successful registration
     if (registrationSuccess) {
-      navigate('/dashboard');
+      navigate("/dashboard");
     }
   }, [registrationSuccess, navigate]);
 
@@ -60,20 +66,20 @@ export default function Signup() {
       const newUser = {
         name,
         email,
-        password
+        password,
       };
 
       const registrationResult = registerUser(newUser);
 
       if (registrationResult.success) {
-        localStorage.setItem('isAuthenticated', 'true');
-        localStorage.setItem('userEmail', email);
-        localStorage.setItem('userName', name);
+        localStorage.setItem("isAuthenticated", "true");
+        localStorage.setItem("userEmail", email);
+        localStorage.setItem("userName", name);
         setRegistrationSuccess(true);
       } else {
-        setFormErrors(prev => ({
+        setFormErrors((prev) => ({
           ...prev,
-          email: registrationResult.message
+          email: registrationResult.message,
         }));
       }
     }
@@ -85,9 +91,7 @@ export default function Signup() {
       <Spin spinning={loading}>
         <div className="form-container">
           <div className="form-toggle">
-            <button onClick={() => navigate("/login")}>
-              Login
-            </button>
+            <button onClick={() => navigate("/login")}>Login</button>
             <button className="active">Sign Up</button>
           </div>
           <form onSubmit={handleSignup} className="form">
@@ -101,7 +105,7 @@ export default function Signup() {
               onChange={(e) => setName(e.target.value)}
             />
             {formErrors.name && (
-              <p style={{ color: 'red' }}>{formErrors.name}</p>
+              <p style={{ color: "red" }}>{formErrors.name}</p>
             )}
 
             <label htmlFor="email">Email</label>
@@ -114,7 +118,7 @@ export default function Signup() {
               onChange={(e) => setEmail(e.target.value)}
             />
             {formErrors.email && (
-              <p style={{ color: 'red' }}>{formErrors.email}</p>
+              <p style={{ color: "red" }}>{formErrors.email}</p>
             )}
 
             <label htmlFor="password">Password</label>
@@ -127,7 +131,7 @@ export default function Signup() {
               onChange={(e) => setPassword(e.target.value)}
             />
             {formErrors.password && (
-              <p style={{ color: 'red' }}>{formErrors.password}</p>
+              <p style={{ color: "red" }}>{formErrors.password}</p>
             )}
 
             <button type="submit">Signup</button>

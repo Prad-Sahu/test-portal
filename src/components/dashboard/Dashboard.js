@@ -14,8 +14,8 @@ const { Content, Sider } = Layout;
 
 const Dashboard = () => {
   const { username } = useParams(); // Access the username from the URL
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const dispatch = useDispatch(); //Initialize the dispatch function
+  const navigate = useNavigate(); //Initialize the navigate function
   const userName = getAuthUserDetails();
   const posts = useSelector(
     (state) => state.rootReducer.posts.successData.posts
