@@ -1,0 +1,222 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f3f3f3;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.form-container {
+    background-color: #bdbdbd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.form-toggle {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.form-toggle button {
+    width: 50%;
+    padding: 10px;
+    background-color: #f3f3f3;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 10px 10px 0 0;
+}
+
+.form-toggle .active {
+    background-color: #033452;
+    color:  #f3f3f3;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form h2 {
+    margin-bottom: 20px;
+}
+
+.form input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form button {
+    padding: 10px;
+    background-color: #033452;
+    color:  #f3f3f3;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form a {
+    color: #007bff;
+    text-decoration: none;
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+.form p {
+    text-align: center;
+}
+
+.login-container,
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f3f3f3;
+}
+
+.login-form,
+.signup-form {
+    width: 400px;
+    padding: 40px;
+    background-color: #f3f3f3;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-form h2,
+.signup-form h2 {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.login-form .ant-form-item,
+.signup-form .ant-form-item {
+    margin-bottom: 20px;
+}
+
+.login-form .ant-btn,
+.signup-form .ant-btn {
+    width: 100%;
+}
+
+/* Dashboard CSS */
+.dashboard-layout {
+    height: 100vh;
+    width: 100vw;
+    background-color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    margin: 10px;
+    background-color: #001529;
+    color: #fff;
+    height: 64px;
+}
+
+.username {
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.left-panel,
+.right-panel {
+    background-color: #fff;
+    padding: 24px;
+    margin: 10px;
+    border-right: 1px solid #f0f0f0;
+    overflow-y: auto;
+}
+
+.left-panel .user-profile-image {
+    display: block;
+    margin: 0 auto 16px;
+    max-width: 25vw;
+    border-radius: 50%;
+}
+
+.left-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-container {
+    margin-bottom: 20px;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.left-panel-button {
+    width: 100%;
+}
+
+.left-panel-button {
+    width: 16vw;
+}
+
+.left-panel .my-posts {
+    margin-top: 24px;
+}
+
+.edit-button {
+    float: right;
+}
+
+.middle-panel {
+    padding: 24px;
+    background-color: #fff;
+    margin: 10px;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.user-connection {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.user-connection:hover {
+    background-color: #f0f0f0;
+}
+
+.user-avatar {
+    margin-right: 16px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
